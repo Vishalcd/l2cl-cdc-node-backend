@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <!-- Include header -->
+  <%- include("../partials/_header") %>
+
+  <body>
+    <span class="preheader"
+      >Thanks for Joining L2CL Academy. We’ve pulled together some information and resources to help you get
+      started.</span
+    >
+    <table class="email-wrapper" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+      <tr>
+        <td align="center">
+          <table class="email-content" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+            <tr>
+              <td class="email-masthead">
+                <a href="https://www.l2clcdc.com" class="f-fallback email-masthead_name">
+                  <img
+                    src="https://www.l2clcdc.com/assets/images/logo.png"
+                    width="100"
+                    height="100"
+                    alt="L2CL Academy Logo"
+                  />
+                </a>
+              </td>
+            </tr>
+            <!-- Email Body -->
+            <tr>
+              <td class="email-body" width="570" cellpadding="0" cellspacing="0">
+                <table
+                  class="email-body_inner"
+                  align="center"
+                  width="570"
+                  cellpadding="0"
+                  cellspacing="0"
+                  role="presentation"
+                >
+                  <!-- Body content -->
+                  <tr>
+                    <td class="content-cell">
+                      <div class="f-fallback">
+                        <h1>Hi, <%= locals.firstName %></h1>
+                        <p>
+                          Welcome to L2CL Academy. We’re thrilled to have you on board. We're all a big familiy here, so
+                          make sure to upload your user photo so we get to know you a bit better!
+                        </p>
+                        <!-- Action -->
+                        <table
+                          class="body-action"
+                          align="center"
+                          width="100%"
+                          cellpadding="0"
+                          cellspacing="0"
+                          role="presentation"
+                        >
+                          <tr>
+                            <td align="center">
+                              <!-- Border based button
+           https://litmus.com/blog/a-guide-to-bulletproof-buttons-in-email-design -->
+                              <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
+                                <tr>
+                                  <td align="center">
+                                    <a href="<%= locals.url %>" class="f-fallback button" target="_blank"
+                                      >Your Profile</a
+                                    >
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                        <p><b>Thanks</b>, <br />Mahaveer Choudhary from L2CL and the L2CL Academy team</p>
+                        <p>just reply to this email, the L2CL support team is always ready to help!</p>
+                        <!-- Sub copy -->
+                        <table class="body-sub" role="presentation">
+                          <tr>
+                            <td>
+                              <p class="f-fallback sub">
+                                If you’re having trouble with the button above, copy and paste the URL below into your
+                                web browser.
+                              </p>
+                              <p class="f-fallback sub"><%= locals.url %></p>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!-- Include header -->
+            <%- include("../partials/_footer") %>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
