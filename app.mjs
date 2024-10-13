@@ -28,6 +28,7 @@ import rateLimit from 'express-rate-limit';
 import mongoSanitize from 'express-mongo-sanitize';
 import { xss } from 'express-xss-sanitizer';
 import hpp from 'hpp';
+import compression from 'compression';
 
 const app = express();
 
@@ -81,6 +82,9 @@ app.use(xss());
 
 // Prevent Parameter pollution
 app.use(hpp());
+
+// Compress Response Data
+app.use(compression());
 
 //////////////////////--------
 //ROUTING
