@@ -35,10 +35,9 @@ const app = express();
 //////////////////////--------
 //GLOBAL MIDDLEWARES
 // Implement CORS
-const originUrl = 'http://localhost:5173';
 app.use(
   cors({
-    origin: originUrl,
+    origin: 'http://localhost:4173/',
     credentials: true,
   })
 );
