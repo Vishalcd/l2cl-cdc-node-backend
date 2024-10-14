@@ -16,7 +16,7 @@ router.route('/').get(getAllNotes).post(protect, restrictTo('admin'), uploadPdfP
 router
   .route('/:id')
   .get(getNote)
-  .patch(protect, restrictTo('admin'), updateNote)
+  .patch(protect, restrictTo('admin'), uploadPdfPhoto, resizePdfPhoto, updateNote)
   .delete(protect, restrictTo('admin'), deleteNote);
 
 export default router;

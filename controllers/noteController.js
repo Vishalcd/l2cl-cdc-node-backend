@@ -11,6 +11,7 @@ import { createOne, deleteOne, getAll, getOne, updateOne } from './handleFactory
 export const uploadPdfPhoto = uploadImage.single('pdfCover');
 
 export const resizePdfPhoto = (req, res, next) => {
+  if (req.method === 'PATCH' && !req.file) return next();
   if (!req.file) return new AppError('Please upload image it is required!', 400);
 
   req.file.filename = `pdfcover-${Date.now()}-${uuidv4()}.jpeg`;
