@@ -37,7 +37,7 @@ const app = express();
 // Implement CORS
 app.use(
   cors({
-    origin: 'http://localhost:4173',
+    origin: 'https://l2cl-cdc-admin.netlify.app',
     credentials: true,
   })
 );
@@ -58,8 +58,10 @@ app.set('views', path.join(__dirname, 'views'));
 //Set HTTP Security Headers
 app.use(helmet());
 
-// Development Logging
-app.use(morgan('dev'));
+if (process.env.NODE_ENV === 'development') {
+  // Development Logging
+  app.use(morgan('dev'));
+}
 
 // Limit Request from same API
 const limiter = rateLimit({
